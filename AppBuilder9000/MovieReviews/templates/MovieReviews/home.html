@@ -1,9 +1,101 @@
 {% extends 'MovieReviews/base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1>Welcome to the MovieReviews App</h1>
-    <p>This is the home page of your new Django app.</p>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'index' %}" class="navbar-brand">Main</a>
+            <ul class="navbar-menu">
+                <li><a href="{% url 'MovieReviews:home' %}">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the MovieReviews App</h1>
+            <p>Discover and share movie reviews with our community.</p>
+            <a href="#reviews" class="btn btn-primary">Browse Reviews</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are passionate about movies and reviews. Our platform allows users to find and share movie reviews, and connect with fellow movie enthusiasts.</p>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>Latest Reviews</h2>
+            <div class="grid">
+                <!-- Example grid items -->
+                <div class="grid-item">
+                    <div class="review-card">
+                        <img src="{% static 'images/The_Shawshank_Redemption.jpg' %}" alt="Movie 1">
+                        <h3>The Shawshank Redemption</h3>
+                        <p>A gripping drama about a man who finds solace and eventual redemption through acts of common decency. A timeless classic with incredible performances.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="review-card">
+                        <img src="{% static 'images/The_Godfather.jpg' %}" alt="Movie 2">
+                        <h3>The Godfather</h3>
+                        <p>An epic tale of a crime family, exploring themes of power, loyalty, and family. With an iconic performance by Marlon Brando, this film is a masterpiece of cinema.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="review-card">
+                        <img src="{% static 'images/The_Dark_Knight.jfif' %}" alt="Movie 3">
+                        <h3>The Dark Knight</h3>
+                        <p>A superhero film that transcends the genre, with a dark and complex narrative and a legendary performance by Heath Ledger as the Joker. A thrilling and thought-provoking experience.</p>
+                    </div>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="{% url 'MovieReviews:contact' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MovieReviews. All rights reserved.</p>
+        </div>
+    </footer>
 {% endblock %}
+
 

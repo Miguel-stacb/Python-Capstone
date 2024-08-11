@@ -1,21 +1,37 @@
-<!DOCTYPE html>
+{% load static %}
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Movies Reviews{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <!-- External css -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Internal css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+    {% endblock %}
 </head>
 <body>
     <header>
-        <nav>
-            <a href="{% url 'MovieReviews:home' %}">Home</a>
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'index' %}" class="navbar-brand">Main</a>
+            </div>
         </nav>
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>Footer content here.</p>
+        <p>&copy; 2024 Movies Reviews. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
