@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block page-title %}App Builder 9000{% endblock %}
 {% block page-subtitle %}Python Capstone{% endblock %}
 {% block button1 %}<a href="#apps" class="contact-btn">Portfolio</a>{% endblock %}
 {% block button2 %}<a href="#about" class="contact-btn">Contact Us</a>{% endblock %}
 
 {% block appcontent %}
+<style>
+       .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+    }
+    .grid img {
+        width: 40%;
+        height: auto;
+    }
+    .grid h3 {
+        margin-top: 1rem;
+        color: #000;
+    }
+</style>
 <section class="masonry-grid" id="apps">
     <br><br>
     <h2 class="sub-title">App Directory</h2>
@@ -14,6 +35,7 @@
        <a href="{% url 'MovieReviews:home' %}">
             <img src="{% static 'images/home-page-images/cinema-strip-2713352_1280.jpg' %}" alt="Movie Reviews">
        </a>
+    <h2 class="sub-title">Movie Reviews App</h2>
     </div>
 </section>
 

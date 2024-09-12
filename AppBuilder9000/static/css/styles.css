@@ -296,7 +296,11 @@ ul#scene {
   position: relative;
 }
 .grid {
-    margin: 0 auto;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
 }
 .grid-item {
   width: 450px;
@@ -460,3 +464,5 @@ footer h1 {
 /* ============= RESPONSIVE max-width: 385px=========== */
 @media (max-width: 385px){
 }
+
+

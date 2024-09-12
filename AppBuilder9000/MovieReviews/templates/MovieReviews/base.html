@@ -22,16 +22,31 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="{% url 'index' %}" class="navbar-brand">Main</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Main</a>
             </div>
         </nav>
     </header>
     <main>
+          <!-- Bloque para mostrar mensajes de Django -->
+        {% if messages %}
+            <div class="alert-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2024 Movies Reviews. All rights reserved.</p>
-    </footer>
+    <!-- Footer-->
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 MovieReviews. All rights reserved.</p>
+        </div>
+    </div>
+
 
 </body>
 </html>

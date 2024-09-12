@@ -2,10 +2,9 @@
 
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Movie Reviews{% endblock %}
 
 {% block content %}
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="{% url 'index' %}" class="navbar-brand">Main</a>
@@ -17,7 +16,6 @@
             </ul>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
@@ -62,13 +60,36 @@
                         <p>A superhero film that transcends the genre, with a dark and complex narrative and a legendary performance by Heath Ledger as the Joker. A thrilling and thought-provoking experience.</p>
                     </div>
                 </div>
-                <!-- Add more items as needed -->
             </div>
         </div>
     </section>
 
+    <!-- Recent Releases Section -->
+    <section class="recent-releases">
+        <div class="container">
+            <h2>Recent Releases</h2>
+            <div class="recent-movies">
+                {% for movie in recent_movies %}
+                    <div class="movie-item">
+                        <h3 class="movie-title">{{ movie.title }}</h3>
+                        <p class="movie-description">{{ movie.description }}</p>
+                        <p class="movie-release-date">{{ movie.release_date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+    <!-- Buttons Container -->
+            <div class="buttons-container mt-4">
+                <div class="add-review-container">
+                    <a href="{% url 'MovieReviews:create_movie' %}" class="btn btn-primary">Add Movie Review</a>
+                </div>
+                <div class="view-all-items-container">
+                    <a href="{% url 'MovieReviews:items_list' %}" class="btn btn-primary">View All Items</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contact Us</h2>
             <form action="{% url 'MovieReviews:contact' %}" method="post">
@@ -90,12 +111,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 MovieReviews. All rights reserved.</p>
         </div>
-    </footer>
+    </footer>-->
 {% endblock %}
-
-

@@ -1,6 +1,7 @@
 /* styles.css */
 
 /* General Styles */
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,7 +10,7 @@ body {
     background-color: #f4f4f4;
 }
 main {
-      margin-top: 60px;
+      margin-top:60px;
 
 }
 
@@ -173,6 +174,11 @@ main {
     margin-bottom: 20px;
 }
 
+.contact-section {
+    /* Asegúrate de que esta sección no esté superponiendo el pie de página */
+    margin-bottom: 50px;  /* Esto asegura que la sección de contacto no se superponga con el pie de página */
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -199,6 +205,7 @@ main {
     text-transform: uppercase;
     cursor: pointer;
     display: inline-block;
+    margin-top: 20px;
 }
 
 .btn-primary:hover {
@@ -212,3 +219,159 @@ main {
     padding: 10px 0;
     text-align: center;
 }
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 0px; /* Ajusta el margen según tus necesidades */
+}
+
+/* Estilo para el contenedor de revisiones recientes */
+.recent-releases {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para cada película en las revisiones recientes */
+.recent-releases .movie-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.recent-releases .movie-item:last-child {
+    border-bottom: none;
+}
+
+.recent-releases .movie-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.recent-releases .movie-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.recent-releases .movie-release-date {
+    font-size: 12px;
+    color: #999;
+}
+@media (max-width: 768px) {
+    .recent-releases {
+        padding: 5px;
+    }
+
+    .recent-releases .movie-item {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .recent-releases .movie-title {
+        font-size: 16px;
+    }
+}
+/* Estilo para el contenedor del botón de "Add Review" */
+.add-review-container {
+    text-align: center; /* Centra el botón horizontalmente */
+    margin-top: 0px;   /* Espacio superior para separarlo de las revisiones */
+}
+
+.btn-add-review {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-review:hover {
+    background-color: #0056b3;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Estilo para la barra de búsqueda */
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f4f4f4;
+}
+
+/* Estilo para la paginación */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination .step-links {
+    display: inline-block;
+}
+
+.pagination .step-links a {
+    margin: 0 5px;
+    text-decoration: none;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos en el contenedor */
+    margin-top: 20px;
+}
+
+.buttons-container .btn {
+    margin: 0 10px;
+}
+
+.item-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.item-details h2 {
+    margin-top: 0;
+}
+
+.item-details a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+

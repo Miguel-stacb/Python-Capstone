@@ -1,0 +1,14 @@
+{% extends 'MovieReviews/base.html' %}
+
+{% block title %}Delete Item{% endblock %}
+
+{% block content %}
+<section class="item-delete">
+    <h2>Are you sure you want to delete "{{ item.title }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'MovieReviews:item_details' item.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</section>
+{% endblock %}

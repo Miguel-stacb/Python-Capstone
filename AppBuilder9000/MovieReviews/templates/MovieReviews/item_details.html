@@ -1,0 +1,29 @@
+{% extends 'MovieReviews/base.html' %}
+
+{% block title %}item_details{% endblock %}
+
+{% block content %}
+<section class="item-details">
+    <h2>{{ item.title }}</h2>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Rating:</strong> {{ item.rating }}</p>
+    <p><strong>Release Date:</strong> {{ item.release_date }}</p>
+    <a href="{% url 'MovieReviews:item_edit' item_id=item.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'MovieReviews:items_list' %}">Back to List</a>
+</section>
+
+<!-- Add this to your base template or specific page -->
+<script>
+    function confirmDelete(itemId) {
+        const confirmation = confirm("Are you sure you want to delete this item?");
+        if (confirmation) {
+            window.location.href = `/MovieReviews/item/${itemId}/delete/`;
+        }
+    }
+</script>
+
+<a href="#" onclick="confirmDelete({{ item.id }})" class="btn btn-danger">Delete</a>
+
+
+{% endblock %}
+
